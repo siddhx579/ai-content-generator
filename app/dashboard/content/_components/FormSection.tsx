@@ -23,7 +23,7 @@ function FormSection({ selectedTemplate, userFormInput, loading }: PROPS) {
 
     const onSubmit = (e: any) => {
         e.preventDefault();
-        userFormInput(formData);
+        userFormInput(formData);        
     }
 
     return (
