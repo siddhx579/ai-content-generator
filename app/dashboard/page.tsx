@@ -9,7 +9,7 @@ function Dashboard() {
 
     return (
         <div>
-            <SearchSection onSearchInput={(value:string) => setUserSearchInput(value)} />
+            <SearchSection onSearchInput={(value: string) => setUserSearchInput(value)} />
 
             <TemplateListSection userSearchInput={userSearchInput} />
         </div>
