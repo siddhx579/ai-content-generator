@@ -9,7 +9,7 @@ interface props {
 }
 
 function OutputSection({ aiOutput }: props) {
-    const editorRef:any = useRef();
+    const editorRef: any = useRef();
 
     return (
         <div className='bg-white shadow-lg border rounded-lg'>
@@ -27,7 +27,7 @@ function OutputSection({ aiOutput }: props) {
                 height="600px"
                 initialEditType="wysiwyg"
                 useCommandShortcut={true}
-                onChange={()=>console.log(editorRef.current.getInstance().getMarkdown())}
+                onChange={() => console.log(editorRef.current.getInstance().getMarkdown())}
             />
         </div>
     );
