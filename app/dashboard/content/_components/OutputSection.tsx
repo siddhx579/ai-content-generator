@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import { Editor } from '@toast-ui/react-editor';
 import { Button } from '@/components/ui/button';
@@ -10,6 +10,11 @@ interface props {
 
 function OutputSection({ aiOutput }: props) {
     const editorRef: any = useRef();
+
+    useEffect(() => {
+        const editorInstance = editorRef.current.getInstance();
+        editorInstance.setMarkdown(aiOutput);
+    }, [aiOutput])
 
     return (
         <div className='bg-white shadow-lg border rounded-lg'>
