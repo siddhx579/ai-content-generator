@@ -23,7 +23,7 @@ const generationConfig = {
     responseMimeType: "text/plain",
 };
 
-const chatSession = model.startChat({
+export const chatSession = model.startChat({
     generationConfig,
     history: [
     ],
