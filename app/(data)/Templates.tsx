@@ -17,7 +17,6 @@ export default [
                 label: 'Enter blog outline',
                 field: 'textarea',
                 name: 'outline',
-
             }
         ]
     },
@@ -78,10 +77,8 @@ export default [
                 name: 'outline'
             }
         ]
-
     },
     {
-
         name: 'Youtube Description',
         desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
         category: 'Youtube Tool',
@@ -108,9 +105,7 @@ export default [
         category: 'Youtube Tool',
         icon: 'https://cdn-icons-png.flaticon.com/128/4674/4674918.png',
         slug: 'youtube-tag',
-
         aiPrompt: 'Generate 10 Youtube tags in bullet point based on title and outline in rich text editor format',
-
         form: [
             {
                 label: 'Enter your youtube title',
@@ -125,7 +120,6 @@ export default [
             }
         ]
     },
-
     {
         name: 'Rewrite Article (Plagiarism Free)',
         desc: 'Use this tool to rewrite existing Article or Blog Post which can bypass AI detectors and also make it plagiarism free.',
@@ -178,7 +172,6 @@ export default [
         desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
         icon: 'https://cdn-icons-png.flaticon.com/128/15713/15713420.png',
         category: 'blog',
-
         slug: 'instagram-post-generator',
         aiPrompt: 'Generate 3 Instagram post depends on a given keywords and give output in  in rich text editor format',
         form: [
@@ -188,7 +181,6 @@ export default [
                 name: 'keywords',
                 required: true
             },
-
         ]
     },
     {
@@ -206,7 +198,6 @@ export default [
                 name: 'keywords',
                 required: true
             },
-
         ]
     },
     {
@@ -214,7 +205,6 @@ export default [
         desc: 'An AI tool that generate New and trending instagram idea depends on your niche',
         icon: 'https://cdn-icons-png.flaticon.com/128/1029/1029183.png',
         category: 'instagram',
-
         slug: 'instagram-post-idea-generator',
         aiPrompt: 'Generate 5-10 Instagram idea depends on niche with latest trend and give output in  in rich text editor format',
         form: [
@@ -224,7 +214,6 @@ export default [
                 name: 'keywords',
                 required: true
             },
-
         ]
     },
     {
@@ -232,7 +221,6 @@ export default [
         desc: 'AI Model to Correct your english grammer by providing the text',
         icon: 'https://cdn-icons-png.flaticon.com/128/12596/12596700.png',
         category: 'english',
-
         slug: 'english-grammer-checker',
         aiPrompt: 'Rewrite the inputText by correcting the grammer and give output in  in rich text editor format',
         form: [
@@ -242,7 +230,6 @@ export default [
                 name: 'inputText',
                 required: true
             },
-
         ]
     },
     {
@@ -250,7 +237,6 @@ export default [
         desc: 'AI Model to generate programming code in any language',
         icon: 'https://cdn-icons-png.flaticon.com/128/6062/6062646.png',
         category: 'Coding',
-
         slug: 'write-code',
         aiPrompt: 'Depends on user codeDescription write a code and give output in  in rich text editor format in code block ',
         form: [
@@ -260,7 +246,6 @@ export default [
                 name: 'codeDesscripton',
                 required: true
             },
-
         ]
     },
     {
@@ -268,7 +253,6 @@ export default [
         desc: 'AI Model to explain programming code in any language',
         icon: 'https://cdn-icons-png.flaticon.com/128/8488/8488751.png',
         category: 'Coding',
-
         slug: 'explain-code',
         aiPrompt: 'Depends on user codeDescription explain code line by line and give output in  in rich text editor format in code block ',
         form: [
@@ -278,7 +262,6 @@ export default [
                 name: 'codeDesscripton',
                 required: true
             },
-
         ]
     },
     {
@@ -286,7 +269,6 @@ export default [
         desc: 'This tool analyzes your input, like error messages and code snippets, to pinpoint and fix bugs, offering detailed solutions and alternatives in a straightforward, user-friendly way.',
         icon: 'https://cdn-icons-png.flaticon.com/128/4426/4426267.png',
         category: 'code-bug-detector',
-
         slug: 'code-bug-detector',
         aiPrompt: 'Depends on user codeInput find bug in code and give solution and give output in  in rich text editor format in code block ',
         form: [
@@ -296,7 +278,6 @@ export default [
                 name: 'codeInput',
                 required: true
             },
-
         ]
     },
     {
@@ -304,7 +285,6 @@ export default [
         desc: 'Struggling to find the perfect tagline for your brand? Let our AI-tool assist you in creating a tagline that stands out.',
         icon: 'https://cdn-icons-png.flaticon.com/128/2178/2178616.png',
         category: 'Marketting',
-
         slug: 'tagline-generator',
         aiPrompt: 'Depends on user productName and outline generate catchy 5-10 tagline for the business product and give output  in rich text editor format ',
         form: [
@@ -320,7 +300,6 @@ export default [
                 name: 'outline',
                 required: true
             },
-
         ]
     },
     {
@@ -328,7 +307,6 @@ export default [
         desc: 'This is your AI-powered SEO expert, creating captivating and keyword-rich e-commerce product descriptions to boost your online sales.',
         icon: 'https://cdn-icons-png.flaticon.com/128/679/679922.png',
         category: 'Marketting',
-
         slug: 'product-description',
         aiPrompt: 'Depends on user productName and description generate small description for product for e-commer business give output  in rich text editor format  ',
         form: [
