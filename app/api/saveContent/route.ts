@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
 import moment from 'moment';
-
-const prisma = new PrismaClient();
+import { prisma } from '@/utils/prisma';
 
 export async function POST(req: NextRequest) {
     try {
@@ -13,7 +11,7 @@ export async function POST(req: NextRequest) {
                 formData,
                 templateSlug,
                 aiResponse,
-                createdBy: createdBy || '', // Ensure it’s a string
+                createdBy: createdBy || '',
                 createdAt: moment().format('YYYY-MM-DD'),
             },
         });
