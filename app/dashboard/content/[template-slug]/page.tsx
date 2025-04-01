@@ -28,7 +28,7 @@ function CreateNewContent(props: PROPS) {
     );
     const [aiOutput, setAiOutput] = useState<string>('');
     const { user } = useUser();
-    const router = useRouter();
+    // const router = useRouter();
     const prisma = new PrismaClient();
     const { totalUsage, setTotalUsage } = useContext(TotalUsageContext);
     const { userSubscription, setUserSubscription } = useContext(UserSubscriptionContext);
@@ -58,7 +58,7 @@ function CreateNewContent(props: PROPS) {
     const GenerateAIContent = async (formData: any) => {
         if (totalUsage >= 10000 && !userSubscription) {
             console.log("Please upgrade");
-            router.push('/dashboard/billing');
+            // router.push('/dashboard/billing');
             return;
         }
         setLoading(true);
