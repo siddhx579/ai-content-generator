@@ -11,6 +11,10 @@ import { chatSession } from '@/utils/AiModal';
 import { PrismaClient } from '@prisma/client';
 import { useUser } from '@clerk/nextjs';
 import moment from 'moment';
+import { TotalUsageContext } from '@/app/(context)/TotalUsageContext';
+import { UserSubscriptionContext } from '@/app/(context)/UserSubscriptionContext';
+import { UpdateCreditUsageContext } from '@/app/(context)/UpdateCreditUsageContext';
+import { useRouter } from 'next/router';
 
 interface PROPS {
     params: Promise<{ 'template-slug': string }>;
@@ -24,12 +28,15 @@ function CreateNewContent(props: PROPS) {
     );
     const [aiOutput, setAiOutput] = useState<string>('');
     const { user } = useUser();
+    const router = useRouter();
     const prisma = new PrismaClient();
-    // const {totalUsage, setTotalUsage} = useContext(TotalUsageContext);
+    const { totalUsage, setTotalUsage } = useContext(TotalUsageContext);
+    const { userSubscription, setUserSubscription } = useContext(UserSubscriptionContext);
+    const { updateCreditUsage, setUpdateCreditUsage } = useContext(UpdateCreditUsageContext);
 
     const SaveInDb = async (formData: any, slug: any, aiResp: string) => {
         try {
-            const response = await fetch('@/app/api/saveContent', {
+            const response = await fetch('/api/saveContent', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -49,8 +56,11 @@ function CreateNewContent(props: PROPS) {
     };
 
     const GenerateAIContent = async (formData: any) => {
-        // if(totalUsage >= 10000 &! userSubscription){
-        // }
+        if (totalUsage >= 10000 && !userSubscription) {
+            console.log("Please upgrade");
+            router.push('/dashboard/billing');
+            return;
+        }
         setLoading(true);
         const SelectedPrompt = selectedTemplate?.aiPrompt;
         const FinalAiPrompt = JSON.stringify(formData) + ", " + SelectedPrompt;
@@ -59,6 +69,8 @@ function CreateNewContent(props: PROPS) {
         setAiOutput(result?.response.text());
         await SaveInDb(JSON.stringify(formData), selectedTemplate?.slug, result?.response.text());
         setLoading(false);
+
+        setUpdateCreditUsage(Date.now());
     }
 
     return (
