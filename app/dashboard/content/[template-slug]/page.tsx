@@ -8,19 +8,18 @@ import { ArrowLeft } from 'lucide-react';
 import Templates from '@/app/(data)/Templates';
 import { TEMPLATE } from '../../_components/TemplateListSection';
 import { chatSession } from '@/utils/AiModal';
-import { PrismaClient } from '@prisma/client';
 import { useUser } from '@clerk/nextjs';
 import moment from 'moment';
 import { TotalUsageContext } from '@/app/(context)/TotalUsageContext';
 import { UserSubscriptionContext } from '@/app/(context)/UserSubscriptionContext';
 import { UpdateCreditUsageContext } from '@/app/(context)/UpdateCreditUsageContext';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation'; 
 
 interface PROPS {
     params: Promise<{ 'template-slug': string }>;
 }
 
-function CreateNewContent(props: PROPS) {
+function CreateNewContent(props: PROPS) { 
     const [loading, setLoading] = useState(false);
     const params = use(props.params);
     const selectedTemplate: TEMPLATE | undefined = Templates?.find(
@@ -28,8 +27,8 @@ function CreateNewContent(props: PROPS) {
     );
     const [aiOutput, setAiOutput] = useState<string>('');
     const { user } = useUser();
-    // const router = useRouter();
-    const prisma = new PrismaClient();
+    const router = useRouter(); 
+
     const { totalUsage, setTotalUsage } = useContext(TotalUsageContext);
     const { userSubscription, setUserSubscription } = useContext(UserSubscriptionContext);
     const { updateCreditUsage, setUpdateCreditUsage } = useContext(UpdateCreditUsageContext);
@@ -56,9 +55,9 @@ function CreateNewContent(props: PROPS) {
     };
 
     const GenerateAIContent = async (formData: any) => {
-        if (totalUsage >= 10000 && !userSubscription) {
+        if (totalUsage >= 100000 && !userSubscription) {
             console.log("Please upgrade");
-            // router.push('/dashboard/billing');
+            router.push('/dashboard/billing');
             return;
         }
         setLoading(true);
@@ -71,7 +70,7 @@ function CreateNewContent(props: PROPS) {
         setLoading(false);
 
         setUpdateCreditUsage(Date.now());
-    }
+    };
 
     return (
         <div className='p-5'>
