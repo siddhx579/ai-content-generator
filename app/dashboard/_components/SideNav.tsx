@@ -24,7 +24,7 @@ function SideNav() {
             path: '/dashboard/billing'
         },
         {
-            name: 'Setting',
+            name: 'Settings',
             icon: Settings,
             path: '/dashboard/settings'
         },
@@ -44,7 +44,7 @@ function SideNav() {
             <div className='mt-3'>
                 {MenuList.map((menu, index) => (
                     <Link href={menu.path} key={index}>
-                        <div className={`flex gap-2 mb-2 p-3 hover:bg-primary hover:text-white rounded-lg cursor-pointer items-center ${path == menu.path && 'bg-primary text-white'}`}>
+                        <div className={`flex gap-2 mb-2 p-3 hover:bg-gradient-to-br from-blue-500 via-cyan-500 to-purple-600 hover:text-white rounded-lg cursor-pointer items-center ${path == menu.path && 'bg-gradient-to-br from-blue-500 via-cyan-500 to-purple-600 text-white'}`}>
                             <menu.icon className='h-6 w-6' />
                             <h2 className='text-lg'>{menu.name}</h2>
                         </div>
