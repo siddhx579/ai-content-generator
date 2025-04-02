@@ -32,7 +32,7 @@ function UsageTrack() {
 
     return (
         <div className='m-5'>
-            <div className='bg-primary text-white p-3 rounded-lg'>
+            <div className='bg-gradient-to-br from-blue-500 via-cyan-500 to-purple-600 text-white p-3 rounded-lg'>
                 <h2 className='font-medium'>Credits</h2>
                 <div className='h-2 bg-[#9981f9] w-full rounded-full mt-3'>
                     <div className='h-2 bg-white rounded-full' style={{ width: totalUsage / maxWords > 1 ? '100%' : `${(totalUsage / maxWords) * 100}%` }}>
@@ -40,7 +40,7 @@ function UsageTrack() {
                 </div>
                 <h2 className='text-sm my-2'>{totalUsage}/{maxWords} credits used</h2>
             </div>
-            <Button variant={'secondary'} className='w-full my-3 text-primary'>Upgrade</Button>
+            <Button className='w-full my-3 border-3 bg-gradient-to-br from-blue-50 via-cyan-50 to-purple-50 text-primary'>Upgrade</Button>
         </div>
     );
 }
