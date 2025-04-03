@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WriteFlow
 
-## Getting Started
+WriteFlow is an AI-powered content generation platform designed to help creators and businesses generate high-quality text effortlessly. With real-time editing, customizable templates, and AI-driven assistance, WriteFlow enhances productivity and creativity.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **AI-Powered Content**: Generate high-quality, engaging content effortlessly.
+- **Customizable Templates**: Choose from a variety of templates tailored for your needs.
+- **Real-Time Editing**: Edit and refine your content with live AI suggestions.
+- **User-Friendly Dashboard**: Easily navigate and manage your content.
+- **Secure Authentication**: Powered by Clerk for authentication and user management.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: Next.js, React, Tailwind CSS, TypeScript
+- **Backend**: Supabase, Node.js, Postgresql
+- **Authentication**: Clerk
+- **Icons**: Lucide React
+- **Deployment**: Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Installation & Setup
 
-## Learn More
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/siddhx579/writeflow.git
+   cd writeflow
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies**:
+   ```sh
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Set up environment variables**:
+   Create a `.env.local` file and add the necessary API keys for Clerk and Strapi.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Run the development server**:
+   ```sh
+   npm run dev
+   ```
+   Open `http://localhost:3000` to view it in the browser.
 
-## Deploy on Vercel
+## 🤝 Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! To contribute:
+1. Fork the repository.
+2. Create a new branch.
+3. Commit your changes.
+4. Push to your branch and submit a Pull Request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+💡 **Write smarter with WriteFlow!** 🚀
